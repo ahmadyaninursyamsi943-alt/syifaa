@@ -3,341 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <title>Happy Birthday 💖</title>
+
+  <!-- GOOGLE FONT LUCU & MEWAH -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: 'Poppins', sans-serif;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(255,182,213,0.6), transparent 40%),
-        radial-gradient(circle at 90% 30%, rgba(210,166,121,0.6), transparent 45%),
-        linear-gradient(135deg, #ffc0d9, #d2a679);
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(135deg, #f8c8dc, #d2b48c);
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
 
-    /* dekorasi estetik */
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(40px);
-      opacity: 0.45;
-      animation: blobMove 18s ease-in-out infinite alternate;
-    }
-    .blob.pink { background: #ff8fc7; width: 280px; height: 280px; top: -80px; left: -80px; }
-    .blob.brown { background: #c49a6c; width: 300px; height: 300px; bottom: -100px; right: -100px; animation-delay: 3s; }
-
-    @keyframes blobMove {
-      from { transform: translate(0,0) scale(1); }
-      to { transform: translate(60px,40px) scale(1.15); }
-    }
-    }
-
-    /* Background hidup (biar ga bosen) */
-    .bg-layer {
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(255,182,213,0.6), transparent 40%),
-        radial-gradient(circle at 80% 60%, rgba(210,166,121,0.6), transparent 45%),
-        linear-gradient(135deg, #ffc0d9, #d2a679);
-      animation: bgShift 14s ease-in-out infinite alternate;
-      z-index: -2;
-    }
-
-    @keyframes bgShift {
-      0% { filter: hue-rotate(0deg); transform: scale(1); }
-      100% { filter: hue-rotate(25deg); transform: scale(1.06); }
-    }
-
-    /* Efek buka lembaran */
-    .page { perspective: 1200px; }
-    .page-inner {
-      transform-origin: left center;
-      animation: pageOpen 1.4s ease forwards;
-    }
-
-    @keyframes pageOpen {
-      0% { transform: rotateY(-90deg); opacity: 0; }
-      100% { transform: rotateY(0deg); opacity: 1; }
-    }
-
-    .card {
-      background: rgba(255,255,255,0.92);
-      border-radius: 25px;
-      padding: 30px 25px 40px;
-      max-width: 420px;
-      width: 92%;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      animation: pop 1s ease;
+    /* AMPLOP */
+    .envelope {
+      width: 220px;
+      height: 150px;
+      background: #6ec1ff;
+      border-radius: 12px;
       position: relative;
-      overflow: hidden;
-    }
-
-    /* pattern garis manis */
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        rgba(255,182,213,0.15),
-        rgba(255,182,213,0.15) 10px,
-        transparent 10px,
-        transparent 20px
-      );
-      pointer-events: none;
-    }
-      animation: pop 0.9s ease;
-    }
-
-    @keyframes pop {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      color: #5a3b22;
-      line-height: 1.9;
-      margin-bottom: 25px;
-      letter-spacing: 0.3px;
-    }
-
-    .lux {
-      font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      letter-spacing: 0.6px;
-    }
-    .name {
-      display: block;
-      font-size: 30px;
-      background: linear-gradient(135deg,#ff6fb1,#c49a6c);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 6px 18px rgba(214,51,132,0.25);
-      animation: shimmer 3s infinite;
-    }
-    @keyframes shimmer {
-      0%{filter: brightness(1)}
-      50%{filter: brightness(1.2)}
-      100%{filter: brightness(1)}
-    }
-
-    /* animasi pesan mewah & lucu */
-    .msg {
-      animation: floatIn 0.9s ease both;
-      position: relative;
-    }
-    .msg::after{
-      content:"✨";
-      position:absolute;
-      right:-10px; top:-8px;
-      animation: twinkle 1.2s infinite;
-    }
-    @keyframes floatIn{
-      from{opacity:0; transform: translateY(10px) scale(0.98)}
-      to{opacity:1; transform: translateY(0) scale(1)}
-    }
-    @keyframes twinkle{
-      0%,100%{opacity:0.4}
-      50%{opacity:1}
-    }
-      transition: opacity 0.3s ease;
-    }
-
-    .btn {
-      background: linear-gradient(135deg, #ff69b4, #c49a6c);
-      color: white;
-      border: none;
-      padding: 12px 26px;
-      border-radius: 30px;
-      font-size: 14px;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s infinite;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+    .envelope span {
+      color: white;
+      font-size: 20px;
     }
 
-    /* Confetti lucu */
-    .confetti span {
-      position: fixed;
-      top: -10px;
-      font-size: 18px;
-      animation: confettiFall 5s linear infinite;
-      pointer-events: none;
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
-    @keyframes confettiFall {
-      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
-    }
-
-    .footer {
-      margin-top: 15px;
-      font-size: 12px;
-      color: #7a4a2e;
-    }
-
-  
-    /* Stiker melayang biar rame */
-    .stickers span {
-      position: fixed;
-      top: 100vh;
-      font-size: 26px;
-      animation: floatUp 10s linear infinite;
-      pointer-events: none;
-      opacity: 0.9;
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-      10% { opacity: 1; }
-      100% { transform: translateY(-130vh) rotate(360deg); opacity: 0; }
-    }
-  
-    /* efek buka halaman */
-    .page {
+    /* KONTEN */
+    .content {
+      display: none;
       position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #fff0f6, #fffaf3);
-      transform-origin: left center;
-      transform: rotateY(0deg);
-      transition: transform 1.2s ease;
-      z-index: 3;
-      border-radius: 25px;
-      pointer-events: none;
-    }
-    .page.flip {
-      transform: rotateY(-180deg);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      text-align: center;
+      padding-top: 60px;
+      z-index: 5;
     }
 
-    /* background ganti halus */
-    .bg-animate {
-      animation: bgChange 18s infinite alternate;
+    .photo-frame {
+      width: 220px;
+      height: 300px;
+      margin: 0 auto 20px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
-    @keyframes bgChange {
-      0% { filter: hue-rotate(0deg); }
-      50% { filter: hue-rotate(15deg); }
-      100% { filter: hue-rotate(-10deg); }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: fade 2s infinite;
+    }
+
+    @keyframes fade {
+      0%,100% { opacity: 1; }
+      50% { opacity: .3; }
+    }
+
+    .message {
+      font-size: 24px;
+      color: #6b3e26;
+      min-height: 60px;
+      animation: textFade 1.5s ease-in-out;
+    }
+
+    @keyframes textFade {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ELEMEN LUCU */
+    .floating {
+      position: absolute;
+      font-size: 24px;
+      animation: float 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); opacity: 0; }
+      to { transform: translateY(-120vh); opacity: 1; }
     }
   </style>
 </head>
-<body class="bg-animate">
-  <div class="blob pink"></div>
-  <div class="blob brown"></div>
-  <div class="blob pink"></div>
-  <div class="blob brown"></div>
+<body>
 
-  <div class="bg-layer"></div>
+  <!-- AMPLOP -->
+  <div class="envelope" id="envelope">
+    <span>📨 Pencet yaa acii</span>
+  </div>
 
-  <audio id="bgm" loop>
-    <source src="musik-romantis.mp3" type="audio/mpeg">
+  <!-- KONTEN -->
+  <div class="content" id="content">
+    <div class="photo-frame">
+      <img id="photo" src="CIPAA.jpg" />
+    </div>
+    <div class="message" id="message"></div>
+  </div>
+
+  <!-- MUSIK -->
+  <audio id="music" loop>
+    <source src="fly me to the moon.mp3" type="audio/mpeg" />
   </audio>
 
-  <div class="confetti" id="confetti"></div>
-
-  <!-- Elemen lucu tambahan -->
-  <div class="stickers">
-    <span style="left:5%; animation-delay:0s">💗</span>
-    <span style="left:15%; animation-delay:1s">🌸</span>
-    <span style="left:25%; animation-delay:2s">🧸</span>
-    <span style="left:35%; animation-delay:3s">✨</span>
-    <span style="left:45%; animation-delay:4s">🎀</span>
-    <span style="left:55%; animation-delay:5s">🎈</span>
-    <span style="left:65%; animation-delay:6s">🐻</span>
-    <span style="left:75%; animation-delay:7s">💞</span>
-    <span style="left:85%; animation-delay:8s">🌷</span>
-    <span style="left:95%; animation-delay:9s">💫</span>
-  </div>
-
-  <div class="page">
-    <div class="page-inner">
-      <div class="card">
-    <div class="page" id="page"></div>
-
-        <div class="photos">
-          <img src="c:\Users\MyBook Hype\OneDrive\Dokumen\RAHASIA\SYIFAAA\CIPAA.jpg" class="photo" alt="Foto 1">
-          <img src="foto2.jpg" class="photo" alt="Foto 2">
-        </div>
-
-        <h1 class="lux">Happy Birthday <span class="name">Syifa Orriza Putri</span> <span class="bounce">🎀</span></h1>
-        <h2>Untuk Orang Spesial 💕</h2>
-
-        <p id="text">
-          Semoga di hari spesial ini, semua hal baik datang menghampiri kamu 🌷✨
-        </p>
-
-        <button class="btn" onclick="surprise()">Klik kejutan 🎁</button>
-
-        <div class="footer">Dibuat dengan penuh perhatian 🤎</div>
-
-      </div>
-    </div>
-  </div>
-
   <script>
-    window.onload = () => {
-      setTimeout(() => {
-        bgm.volume = 0.6;
-        bgm.play().catch(()=>{});
-        document.getElementById('page').classList.add('flip');
-        setInterval(autoSurprise, 4500);
-      }, 1200);
-    };
     const messages = [
-      "Syifa Orriza Putri, semoga hari ini seindah senyummu dan selucu tawamu 💗😆",
-      "Semoga semua mimpi kamu pelan‑pelan jadi nyata, aku selalu dukung kamu ✨🐻",
-      "Tetap jadi Syifa yang manis, lucu, dan bikin hari jadi lebih cerah 🌸😚",
-      "Hari ini milikmu—ketawa yang banyak ya, aku sayang kamu 🎂😂"
+      "Mwuachh😘💘💕🤎",
+      "Selamat ulang tahun Syifa Orriza Putri 💖",
+      "Semoga apapun yang kamu inginkan bisa tercapai yaa sayangg🤍",
+      "Gamau cium aku nih??🥰😉",
+      "Hamud bikin ini buat aci dengan sepenuh hati tauu🥰",
+      "Kamu seneng gaa??🥳😋",
+      "Love youu Acii🫂",
+      "Aku sayang kamu 🌸"
     ];
 
-    let index = 0;
-    let started = false;
-    const bgm = document.getElementById('bgm');
+    const photos = ['CIPAA.jpg','aci.jpg','sipa.jpg','syifa.jpg'];
+    let msgIndex = 0;
+    let photoIndex = 0;
 
-    function makeConfetti() {
-      const confetti = document.getElementById('confetti');
-      const emojis = ['💖','✨','🎈','🐱','🧸','🌸'];
-      for (let i = 0; i < 28; i++) {
-        const s = document.createElement('span');
-        s.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-        s.style.left = Math.random()*100 + 'vw';
-        s.style.animationDelay = Math.random()*2 + 's';
-        confetti.appendChild(s);
-        setTimeout(()=> s.remove(), 5000);
+    document.getElementById('envelope').onclick = () => {
+      document.getElementById('envelope').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+      document.getElementById('music').play();
+
+      // munculin elemen lucu
+      for(let i=0;i<15;i++){
+        const el = document.createElement('div');
+        el.className = 'floating';
+        el.innerText = ['💖','✨','🎀','🌸','🥰','💘','🌈','💫'][Math.floor(Math.random()*5)];
+        el.style.left = Math.random()*100 + 'vw';
+        el.style.animationDuration = (4 + Math.random()*4) + 's';
+        document.body.appendChild(el);
       }
-    }
 
-    function surprise() {
-      if (!started) {
-        started = true;
-        bgm.volume = 0.6;
-        bgm.play().catch(()=>{});
-        setInterval(autoSurprise, 4000);
-      }
-      autoSurprise();
-    }
+      setInterval(() => {
+        msgIndex = (msgIndex + 1) % messages.length;
+        document.getElementById('message').innerText = messages[msgIndex];
+      }, 1700);
 
-    function autoSurprise() {
-      index = (index + 1) % messages.length;
-      const text = document.getElementById('text');
-      text.style.opacity = 0;
-      setTimeout(() => {
-        text.innerHTML = '<span class="msg">'+messages[index]+'</span>';
-        text.style.opacity = 1;
-      }, 300);
-      makeConfetti();
-    }
+      setInterval(() => {
+        photoIndex = (photoIndex + 1) % photos.length;
+        document.getElementById('photo').src = photos[photoIndex];
+      }, 3000);
+    };
   </script>
-
 </body>
 </html>
